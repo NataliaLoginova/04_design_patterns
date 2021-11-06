@@ -18,7 +18,7 @@ export class ShipperDecorator implements IShipper {
         let strMarks = '';
         this.marks.forEach((mark) => {
             strMarks = strMarks + `**${mark.toUpperCase()}** \n`
-        })
+        });
         return strMarks;
     }
 

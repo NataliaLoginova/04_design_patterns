@@ -25,5 +25,4 @@ export class Package {
     ship(): string {
         return `${this.shipment.ship()} ${this.getCostShipper(this.state.weight)} ${this.getDescriptionShipper()}`;
     }
-
 }

@@ -14,7 +14,7 @@ export class Client {
     constructor(gui: Gui) {
     }
 
-    getShipper(typeShipment) {
+    getShipper(typeShipment: string) {
         if (!this.state.fromZipCode || +this.state.fromZipCode.charAt(0) <= 3 ) {
             const airEastShipper = new AirEastShipper(typeShipment);
             return new ShipperDecorator(airEastShipper, this.state.marks);

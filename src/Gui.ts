@@ -2,8 +2,7 @@ import { Shipment } from "./Shipment";
 
 export class Gui {
 
-    constructor() {
-    }
+    constructor() {}
 
     on(eventType: string, callback: (state: Shipment) => void) {}
 

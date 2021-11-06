@@ -12,15 +12,14 @@ export class ChicagoSprintShipper extends Shipper {
         this.cost = COST[typeShipment];
     }
 
-    getCost(weight: number) {
+    getCost(weight: number): number {
         if (!this.cost) {
             throw new Error('Cost for such type of shipment is not defined');
         }
         return this.cost * weight;
     }
 
-    getDescription() {
+    getDescription(): string {
         return 'CHICAGO SPRINT SHIPPER';
     }
-
 }

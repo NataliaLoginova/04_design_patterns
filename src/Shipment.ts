@@ -31,5 +31,4 @@ export class Shipment {
     ship(): string {
         return `Shipment with the ID ${this.getShipmentId()} will be picked up from: ${this.state.fromAddress} and shipped to: ${this.state.toAddress}`;
     }
-
 }

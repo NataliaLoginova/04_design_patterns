@@ -1,4 +1,3 @@
-
 export interface State {
     shipmentId: number;
     toAddress: string;

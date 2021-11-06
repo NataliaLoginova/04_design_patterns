@@ -1,6 +1,6 @@
 
 export interface IShipper {
-    getCost(weight: number);
+    getCost(weight: number): number;
 
     getDescription(): string;
 }
