@@ -5,12 +5,8 @@ export class Gui {
     constructor() {
     }
 
-    on(eventType: string, callback: (state: Shipment) => void) {
+    on(eventType: string, callback: (state: Shipment) => void) {}
 
-    }
-
-    trigger(eventType: string, state: Shipment) {
-
-    }
+    trigger(eventType: string, state: Shipment) {}
 
 }

@@ -19,6 +19,10 @@ export class Shipment {
         return this.shipper.getCost(weight);
     }
 
+    getDescriptionShipper(): string {
+        return this.shipper.getDescription();
+    }
+
     getShipmentId(): string {
         this.int++;
         return this.int.toString();

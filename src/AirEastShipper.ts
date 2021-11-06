@@ -16,11 +16,15 @@ export class AirEastShipper extends Shipper {
         this.cost = COST[typeShipment];
     }
 
-    getCost(weight: number): number {
+    getCost(weight: number) {
         if (!this.cost) {
             throw new Error('Cost for such type of shipment is not defined');
         }
         return this.cost && this.cost.addition ? this.cost.standart * weight + this.cost.addition : this.cost * weight;
+    }
+
+    getDescription() {
+        return 'AIR EAST SHIPPER';
     }
 
 }

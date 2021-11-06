@@ -1,9 +1,12 @@
+import { IShipper } from "./IShipper";
 
-export abstract class Shipper {
+export abstract class Shipper implements IShipper {
 
     protected constructor() {
     }
 
-    abstract getCost(weight: number): number;
+    abstract getCost(weight: number);
+
+    abstract getDescription(): string;
 
 }

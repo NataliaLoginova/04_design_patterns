@@ -1,4 +1,3 @@
-import { Shipment } from "./Shipment";
 import { Gui } from "./Gui";
 import { AirEastShipper } from "./AirEastShipper";
 import { ChicagoSprintShipper } from "./ChicagoSprintShipper";
@@ -7,6 +6,7 @@ import { Letter } from "./Letter";
 import { Package } from "./Package";
 import { Oversize } from "./Oversize";
 import { State } from "./State";
+import { ShipperDecorator } from "./ShipperDecorator";
 
 export class Client {
     state: State;
@@ -16,13 +16,16 @@ export class Client {
 
     getShipper(typeShipment) {
         if (!this.state.fromZipCode || +this.state.fromZipCode.charAt(0) <= 3 ) {
-            return new AirEastShipper(typeShipment);
+            const airEastShipper = new AirEastShipper(typeShipment);
+            return new ShipperDecorator(airEastShipper, this.state.marks);
         }
         if (this.state.fromZipCode && +this.state.fromZipCode.charAt(0) > 3 && +this.state.fromZipCode.charAt(0) <= 6 ) {
-            return new ChicagoSprintShipper(typeShipment);
+            const chicagoSprintShipper = new ChicagoSprintShipper(typeShipment);
+            return new ShipperDecorator(chicagoSprintShipper, this.state.marks);
         }
         if (this.state.fromZipCode && +this.state.fromZipCode.charAt(0) > 7 && +this.state.fromZipCode.charAt(0) <= 9 ) {
-            return new PacificParcelShipper(typeShipment);
+            const pacificParcelShipper = new PacificParcelShipper(typeShipment);
+            return new ShipperDecorator(pacificParcelShipper, this.state.marks);
         }
     }
 

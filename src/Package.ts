@@ -18,10 +18,12 @@ export class Package {
         return this.shipment.getCostShipper(weight);
     }
 
+    getDescriptionShipper(): string {
+        return this.shipment.getDescriptionShipper();
+    }
+
     ship(): string {
-        const str = this.shipment.ship();
-        const cost = this.getCostShipper(this.state.weight);
-        return `${str} ${this.state.weight * cost}`;
+        return `${this.shipment.ship()} ${this.getCostShipper(this.state.weight)} ${this.getDescriptionShipper()}`;
     }
 
 }
